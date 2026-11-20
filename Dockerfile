@@ -26,3 +26,7 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
 
 # Comando de inicio
 ENTRYPOINT ["streamlit", "run", "src/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
+# Copiar código fuente y tema de Streamlit
+COPY .streamlit/ ./.streamlit/
+COPY src/ ./src/
